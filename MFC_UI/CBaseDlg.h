@@ -17,6 +17,11 @@
 #include "MyDlgTemplate.h"
 #define CGroupBox CButton
 
+#define OPENCV
+#ifdef OPENCV
+#include "opencv\MatView.h"
+#endif
+
 enum BASE_CTRL_STYLE
 {
 	BASE_BUTTON,// »ù±¾°´Å¥
@@ -446,6 +451,10 @@ public:
 	// Parameter: UINT nID
 	//************************************
 	CGradientBackground* AddBackground(CRect rect, UINT nID = 65535U);
+
+#ifdef OPENCV	
+	CMatView* AddMatView(CString sCaption, cv::Mat img, CRect rect, UINT nID = 65535U);
+#endif
 
 // DDX and DDV
 protected:

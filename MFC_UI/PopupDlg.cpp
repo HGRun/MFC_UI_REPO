@@ -32,5 +32,12 @@ BOOL CPopupDlg::Create(LPCTSTR lpszWindowName, int width, int height, CWnd* pPar
 BOOL CPopupDlg::Create(LPCTSTR lpszWindowName, int width, int height, BOOL bMode, CWnd* pParentWnd /*= NULL*/, UINT nID /*= NULL*/)
 {
 	CRect rect(0, 0, width, height);
-	return CBaseDlg::CreateModeDlg(lpszWindowName, rect, bMode, pParentWnd);
+	if (bMode)
+	{
+		return CBaseDlg::CreateModeDlg(lpszWindowName, rect, TRUE, pParentWnd);
+	}
+	else
+	{
+		return CWnd::CreateEx(WS_EX_DLGMODALFRAME, AfxRegisterWndClass(0), lpszWindowName, WS_TILEDWINDOW, rect, this, nID, NULL);
+	}
 }

@@ -787,3 +787,13 @@ void AFXAPI CBaseDlg::DDX_Progress(CDataExchange* pDX, int nIDC, int& value)
 	else
 		ctl->SetPos(value);
 }
+
+#ifdef OPENCV
+CMatView* CBaseDlg::AddMatView(CString sCaption, cv::Mat img, CRect rect, UINT nID /*= 65535U*/)
+{
+	CMatView* pCtrl = new CMatView();
+	pCtrl->Create(sCaption, rect, this, nID);
+	pCtrl->SetMat(img);
+	return pCtrl;
+}
+#endif
