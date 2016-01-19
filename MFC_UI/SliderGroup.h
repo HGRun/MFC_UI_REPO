@@ -2,7 +2,7 @@
 #include "afxcmn.h"
 #include "afxwin.h"
 #include "DrawSlider.h"
-#include "ImageButton.h"
+#include "CommonButton.h"
 
 #define IDC_SLIDER_BUTTON_LEFT 30000
 #define IDC_SLIDER_BUTTON_RIGHT 30001

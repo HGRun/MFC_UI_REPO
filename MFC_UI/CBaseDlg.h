@@ -11,13 +11,13 @@
 #include "SliderGroup.h"
 #include "Indicator.h"
 #include "MyCheckButton.h"
-#include "ImageButton.h"
+#include "CommonButton.h"
 #include "ColorText.h"
 #include "DrawView.h"
 #include "MyDlgTemplate.h"
 #define CGroupBox CButton
 
-#define OPENCV
+//#define OPENCV
 #ifdef OPENCV
 #include "opencv\MatView.h"
 #endif
